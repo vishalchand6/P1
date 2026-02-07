@@ -115,12 +115,23 @@
     });
 
     // No button runs away 😄
-    noBtn.addEventListener("mouseover", () => {
+    // Function to move No button
+    function moveNoButton() {
       const x = Math.random() * 250 - 125;
       const y = Math.random() * 150 - 75;
 
       noBtn.style.transform = `translate(${x}px, ${y}px)`;
-    });
+    }
+
+    // For laptop (mouse)
+    noBtn.addEventListener("mouseover", moveNoButton);
+
+    // For mobile (touch)
+    noBtn.addEventListener("touchstart", moveNoButton);
+
+    // For extra safety (tap)
+    noBtn.addEventListener("click", moveNoButton);
+
   </script>
 
 </body>
